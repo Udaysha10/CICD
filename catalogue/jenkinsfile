@@ -17,5 +17,16 @@ pipeline{
                 """
             }
         }
+    stage("pushing image to docker hub"){
+        steps{
+            withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'password', usernameVariable: 'username')]) {
+                sh """
+                    whoami
+                    pwd
+                    docker push udaysha10/catalogue1:${BUILD_NUMBER}
+                    """
+}
+        }
+    }
     }
 }
