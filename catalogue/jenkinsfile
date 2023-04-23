@@ -8,11 +8,13 @@ pipeline{
             }
         }
         stage("build image"){
+            steps{
             sh """
                 whoami
                 pwd
                 docker build -t udaysha10/catalogue1:${BUILD_NUMBER}
                 """
+            }
         }
     }
 }
