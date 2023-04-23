@@ -12,6 +12,7 @@ pipeline{
             sh """
                 whoami
                 pwd
+                cd /var/lib/jenkins/workspace/Roboshop/Catalogue/catalogue
                 docker build -t udaysha10/catalogue1:${BUILD_NUMBER} .
                 """
             }
