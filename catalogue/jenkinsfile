@@ -8,7 +8,7 @@ pipeline{
             }
         stage("build image and push to docker"){
             steps{
-                echo"building docker imgages"
+                echo"building docker imgagess"
                 
             }
         }
