@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    echo "this is build no: $BUILD_NUMBER"
+    echo "this is build no: ${BUILD_NUMBER}"
     stages{
         stage("checkout"){
             steps{
