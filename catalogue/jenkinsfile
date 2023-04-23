@@ -4,6 +4,7 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
+                echo"helloo ${BUILD_NUMBER}"
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/Udaysha10/cicd.git'
             }
         
