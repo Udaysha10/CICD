@@ -14,7 +14,10 @@ pipeline{
                 
                 """"
                 withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'password', usernameVariable: 'username')]) {
+                    sh"""
                     docker push udaysha10/catalogue1:{$BUILD_NUMBER}
+                    
+                    """
 }
             }
         }
