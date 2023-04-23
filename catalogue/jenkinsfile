@@ -12,7 +12,7 @@ pipeline{
             sh """
                 whoami
                 pwd
-                docker build -t udaysha10/catalogue1:${BUILD_NUMBER}
+                docker build -t udaysha10/catalogue1:${BUILD_NUMBER} .
                 """
             }
         }
