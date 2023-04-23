@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+    echo "this is build no: $BUILD_NUMBER"
+    stages{
+        stage("checkout"){
+            steps{
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Udaysha10/cicd.git'
+            }
+        stage("build image and push to docker"){
+            steps{
+                echo"building imgage"
+                sh"""
+                    docker build -t udaysha10/catalogue1:{$BUILD_NUMBER}
+                
+                """"
+                withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'password', usernameVariable: 'username')]) {
+                    docker push udaysha10/catalogue1:{$BUILD_NUMBER}
+}
+            }
+        }
+        }
+    }
+}
