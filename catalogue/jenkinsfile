@@ -12,6 +12,7 @@ pipeline{
                 whoami
                 pwd
                 docker build -t udaysha10/catalogue1:${BUILD_NUMBER}
+                """
         }
     }
 }
