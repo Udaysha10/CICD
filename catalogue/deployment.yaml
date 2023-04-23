@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: catalogue-container
-        image: udaysha10/catalogue1:ImageNumber
+        image: udaysha10/catalogue1:18
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
