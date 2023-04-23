@@ -1,13 +1,17 @@
 pipeline{
     agent any
-    
     stages{
         stage('checkout'){
             steps{
                 echo"helloo uday ${BUILD_NUMBER}"
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/Udaysha10/cicd.git'
             }
-        
         }
+        stage("build image"){
+            sh """
+                whoami
+                pwd
+                docker build -t udaysha10/catalogue1:${BUILD_NUMBER}
         }
+    }
 }
